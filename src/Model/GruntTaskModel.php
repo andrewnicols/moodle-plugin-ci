@@ -36,6 +36,7 @@ class GruntTaskModel
      */
     public function __construct($taskName, $workingDirectory, $buildDirectory = '')
     {
+        error_log("I am a Grunt '{$taskName}' task with a WD of {$workingDirectory} and a build dir of {$buildDirectory}");
         $this->taskName         = $taskName;
         $this->workingDirectory = $workingDirectory;
         $this->buildDirectory   = $buildDirectory;

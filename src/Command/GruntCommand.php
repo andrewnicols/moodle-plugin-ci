@@ -174,6 +174,7 @@ class GruntCommand extends AbstractMoodleCommand
         }
         $defaultTask = new GruntTaskModel($task, $workingDirectory);
 
+        error_log("Checking directory for task '{$task}'");
         switch ($task) {
             case 'amd':
                 $amdDir = $this->plugin->directory.'/amd';
@@ -184,10 +185,12 @@ class GruntCommand extends AbstractMoodleCommand
                 return new GruntTaskModel($task, $amdDir, 'amd/build');
             case 'shifter':
             case 'yui':
+                error_log("YUI Task found");
                 $yuiDir = $this->plugin->directory.'/yui';
                 if (!is_dir($yuiDir)) {
                     return null;
                 }
+                error_log("YUI Directory found");
 
                 return new GruntTaskModel($task, $yuiDir.'/src', 'yui/build');
             case 'gherkinlint':
