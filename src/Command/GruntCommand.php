@@ -192,7 +192,7 @@ class GruntCommand extends AbstractMoodleCommand
                 }
                 error_log("YUI Directory found");
 
-                return new GruntTaskModel($task, $yuiDir.'/src', 'yui/build');
+                return new GruntTaskModel($task, $yuiDir, 'yui/build');
             case 'gherkinlint':
                 if ($this->moodle->getBranch() < 33 || !$this->plugin->hasBehatFeatures()) {
                     return null;
