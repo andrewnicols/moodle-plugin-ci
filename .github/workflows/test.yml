@@ -49,12 +49,24 @@ jobs:
         include:
           - php: '7.4'
             moodle-branch: 'master'
+            env:
+              MOODLE_REPO: git://github.com/andrewnicols/moodle.git
+              MOODLE_BRANCH: MDL-66979-master-7
           - php: '7.4'
             moodle-branch: 'MOODLE_311_STABLE'
+            env:
+              MOODLE_REPO: git://github.com/andrewnicols/moodle.git
+              MOODLE_BRANCH: MDL-66979-311-7
           - php: '7.4'
             moodle-branch: 'MOODLE_310_STABLE'
+            env:
+              MOODLE_REPO: git://github.com/andrewnicols/moodle.git
+              MOODLE_BRANCH: MDL-66979-310-7
           - php: '7.4'
             moodle-branch: 'MOODLE_39_STABLE'
+            env:
+              MOODLE_REPO: git://github.com/andrewnicols/moodle.git
+              MOODLE_BRANCH: MDL-66979-39-7
           - php: '7.4'
             moodle-branch: 'MOODLE_38_STABLE'
           - php: '7.2'
